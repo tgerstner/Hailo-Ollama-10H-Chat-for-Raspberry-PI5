@@ -1,13 +1,11 @@
 # Hailo-Ollama 10H Chat for Raspberry PI5
 
-Thank you for your interest in my little project. I did install  
+Thank you for your interest in my little project. At first, I did install  
 OpenWebUI and wanted something that was simplier to use. So I developed this 
 app. I hope you enjoy using it and if you want to make enhancements, please do, 
 thats the best part of being open-source. 
 
-Developed for Hailo-Ollama running on Raspberry PI 5 
-to simplify accessing Hailo 10H on the PI 5 instead of 
-installing OpenWebUI.
+Developed for Hailo-Ollama 10H running on Raspberry PI 5 with the AI+ HAT 10H 
 
 Setup: 
    Create a folder on your Raspberry PI 5. 
