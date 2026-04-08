@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HAILO-OLLAMA 10H  CHAT</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="chat-container">
+    <span class="title">Hailo-Ollama 10H Chat</span><br>
+    <span class="subtitle">For the Raspberry PI 5</span>
+    <br>
+    <br>
+
+    <table> 
+       <tr>   
+         <td>
+           <span class="select-model">Select Model:</span>
+           <select id="model-select">
+             <option value="deepseek_r1:1.5b">DeepSeek R1 1.5b</option>
+             <option value="llama3.2:1b">llama 3.2 1b</option>
+             <option value="qwen2:1.5b">Quen 2 1.5b</option>
+             <option value="qwen2.5:1.5b">Quen 2.5 1.5b</option>
+             <option value="qwen2.5-coder:1.5b">Quen 2.5 Coder 1.5b</option>
+             <option value="manifests:qwen3">Manifest Quen3</option>
+            </select>
+         </td> 
+       </tr> 
+    </table>
+
+    <div id="chat-box"></div>
+    <div class="input-area">
+        <input type="text" id="user-input" placeholder="Type a message..." />
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<script>
+async function sendMessage() {
+    let input = document.getElementById("user-input");
+    let message = input.value;
+    let model = document.getElementById("model-select").value;
+
+    if (!message) return;
+
+    let chatBox = document.getElementById("chat-box");
+
+    chatBox.innerHTML += `<div class="user-msg">${message}</div>`;
+    input.value = "";
+
+    chatBox.innerHTML += `
+      <div class="bot-msg" id="thinking">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+    `;
+
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+    let response = await fetch("/chat", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({message: message, model: model})
+    });
+
+    let data = await response.json();
+
+    document.getElementById("thinking").remove();
+
+    chatBox.innerHTML += `<div class="bot-msg">${data.response}</div>`;
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+document.getElementById("user-input").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); // prevents newline / form submit
+        sendMessage(); // call your function
+    }
+ });
+
+
+</script>
+
+</body>
+</html>
+
