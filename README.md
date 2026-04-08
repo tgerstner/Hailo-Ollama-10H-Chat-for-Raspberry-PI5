@@ -12,8 +12,10 @@ installing OpenWebUI.
 There are two apps included with this package. 
  1) pyhailo_txt.py     --- This is a text version which interfaces with the Hailo 10H.  
                            This is great for testing out your interface. It includes 
-                           a verbose mode. 
+                           a verbose mode.
+                           To run: type python pyhailo_txt.py 
  2) pyhailo_server.py  --- This is the flask driven web chat
+                           To run: type python pyhailo_server.py
 
 The following python packages are required to run pyhailo_txt.py 
 - requests
