@@ -29,6 +29,7 @@ def generate_response(prompt, model):
         return "No model was selected" 
 
      response = "Hailo could not determine an answer."
+     prompt = "You are an AI that only outputs the final answer. Do not include any explanations, reasoning steps, or commentary. Output only the answer the the following question: " + prompt
 
      try:
         msg = {
@@ -51,9 +52,10 @@ def generate_response(prompt, model):
         if len(output) > 0:
 
            if "message" in output:
-              response = output["message"]["content"]
-        else:
-           response = "Hailo model may not be downloaded."
+               response = "Model Used: " + model + "\n\n"    
+               response = response + output["message"]["content"]        
+           else:
+               response = "Hailo model may not be downloaded."
      except Exception as e:
         response = "Error processing command" + str(e) 
 
