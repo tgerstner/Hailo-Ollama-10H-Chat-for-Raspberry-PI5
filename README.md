@@ -48,6 +48,9 @@ You will need to run this command in a terminal for each model you wish to use:
    You can download all the models listed. They do not overwrite each other. 
    curl http://localhost:8000/api/pull   -H "Content-Type: application/json"   -d '{ "model": "MODEL-NAME" }'
 
+   If you wish to delete a model that has been downloaded. Run the following curl... 
+   curl -X DELETE http://localhost:8000/api/delete -H "Content-Type: application/json" -d '{ "model": "MODEL-NAME" }'
+
 Assumptions: 
         This app assumes you have the Hailo-Ollama server running 
         on the IP and PORT defined in the python logic. 
