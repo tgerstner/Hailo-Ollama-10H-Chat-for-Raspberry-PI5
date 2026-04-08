@@ -1,9 +1,5 @@
 # Hailo-Ollama-10H-Chat-for-Raspberry-PI5
 
-
-April 7, 2026 
-Todd Gerstner 
-
 Thank you for your interest in my little project. I did install  
 OpenWebUI and wanted something that was simplier to use. So I developed this 
 app. I hope you enjoy using it and if you want to make enhancements, please do, 
@@ -42,18 +38,24 @@ run the this command in a terminal:
 Before you can use the models, they need to be downloaded. 
 You will need to run this command in a terminal for each model you wish to use:
 
-   Change MODEL-NAME to the model you wish to download from the list.
-
+   Change MODEL-NAME to the model you wish to download from the list. 
+   You can download all the models listed. They do not overwrite each other. 
    curl http://localhost:8000/api/pull   -H "Content-Type: application/json"   -d '{ "model": "MODEL-NAME" }'
 
+Assumptions: 
+        This app assumes you have the Hailo-Ollama server running 
+        on the IP and PORT defined in the python logic. 
+        hailo_host = "127.0.0.1" 
+        hailo_port = "8000"
 
-Important: This app does not automatically know which models have been 
-           downloaded or not. The models listed in the dropdown are static.
-           The <select> tag has the model names hard coded. Please make
-           sure the names in the <select> tag matches the your model names.   
-           if not, then the app will not work. 
-           The <select> tag is located in the templates folder in the index.html 
-           file.
+Important: 
+        This app does not automatically know which models have been 
+        downloaded or not. The models listed in the dropdown are static.
+        The <select> tag has the model names hard coded. Please make
+        sure the names in the <select> tag matches the your model names.   
+        if not, then the app will not work. 
+        The <select> tag is located in the templates folder in the index.html 
+        file.
 
 
 If your Hailo-Ollama server is running on a different port, 
@@ -64,12 +66,10 @@ Hailo 10H board attached via the PCIe port. If you wish run this app
 on a different machine, then you will need to change the hailo_host IP 
 address. Please note this has not been tested.   
 
-This app assumes that you have the Hailo-Ollama server running on the
-host specified by hailo_host and the port specified by hailo_port.
 
 Observed Model Issues: 
-In the testing I have performed, I have noticed that the llama3.2:1b model does not 
-handle large requests. It may return jumbled text.
+        In the testing I have performed, I have noticed that the llama3.2:1b model does not 
+        handle large requests. It may return jumbled text.
 
 Suggestions: 
 
