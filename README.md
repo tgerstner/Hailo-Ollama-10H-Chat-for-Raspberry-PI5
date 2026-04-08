@@ -1,4 +1,4 @@
-# Hailo-Ollama-10H-Chat-for-Raspberry-PI5
+# Hailo-Ollama 10H Chat for Raspberry PI5
 
 Thank you for your interest in my little project. I did install  
 OpenWebUI and wanted something that was simplier to use. So I developed this 
