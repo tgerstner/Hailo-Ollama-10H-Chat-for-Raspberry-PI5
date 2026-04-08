@@ -46,7 +46,7 @@ You will need to run this command in a terminal for each model you wish to use:
 
    curl http://localhost:8000/api/pull   -H "Content-Type: application/json"   -d '{ "model": "MODEL-NAME" }'
 
-**********************************************************************************
+
 Important: This app does not automatically know which models have been 
            downloaded or not. The models listed in the dropdown are static.
            The <select> tag has the model names hard coded. Please make
@@ -54,7 +54,7 @@ Important: This app does not automatically know which models have been
            if not, then the app will not work. 
            The <select> tag is located in the templates folder in the index.html 
            file.
-**********************************************************************************
+
 
 If your Hailo-Ollama server is running on a different port, 
 then you will need to change the hailo_port below.  
@@ -71,8 +71,6 @@ Observed Model Issues:
 In the testing I have performed, I have noticed that the llama3.2:1b model does not 
 handle large requests. It may return jumbled text.
 
-
-**********************************************************************************
 Suggestions: 
 
    1)  Create a hailo-ollama.service file in /etc/systemd/system to 
