@@ -19,8 +19,8 @@ import json
 
 class HailoClient: 
 
-    host = "127.0.0.1" 
-    port = "8000"
+    hailo_host = "127.0.0.1" 
+    hailo_port = "8000"
 
     answers = []
 
@@ -43,7 +43,7 @@ class HailoClient:
            if verbose: 
               print("Input", msg)
 
-           url = f"http://{self.host}:{self.port}/api/chat"
+           url = f"http://{self.hailo_host}:{self.hailo_port}/api/chat"
            response = requests.post(url, json=msg) 
 
            output =  response.json() 
@@ -65,7 +65,7 @@ class HailoClient:
 
     def get_models(self): 
         try:
-           url = f"http://{self.host}:{self.port}/hailo/v1/list"
+           url = f"http://{self.hailo_host}:{self.hailo_port}/hailo/v1/list"
            response = requests.get(url) 
 
            models = response.json() 
@@ -236,5 +236,4 @@ while True:
       print("************************************************************************************")
 
 print("Shutting Down Hailo 10H Python Interface") 
-
 
