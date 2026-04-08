@@ -18,6 +18,8 @@ There are two apps included with this package.
                            To run: type python pyhailo_txt.py 
  2) pyhailo_server.py  --- This is the flask driven web chat
                            To run: type python pyhailo_server.py
+                           Then open a web browser to:
+                           http://localhost:5000 
 
 The following python packages are required to run pyhailo_txt.py 
 - requests
