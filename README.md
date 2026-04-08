@@ -9,6 +9,10 @@ Developed for Hailo-Ollama running on Raspberry PI 5
 to simplify accessing Hailo 10H on the PI 5 instead of 
 installing OpenWebUI.
 
+Setup: 
+   Create a folder on your Raspberry PI 5. 
+   Clone the entire repository into that folder. 
+
 There are two apps included with this package. 
  1) pyhailo_txt.py     --- This is a text version which interfaces with the Hailo 10H.  
                            This is great for testing out your interface. It includes 
