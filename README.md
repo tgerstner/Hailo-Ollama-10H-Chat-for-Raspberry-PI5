@@ -4,7 +4,7 @@
 April 7, 2026 
 Todd Gerstner 
 
-Firstly, thank you for your interest in my little project. I did install  
+Thank you for your interest in my little project. I did install  
 OpenWebUI and wanted something that was simplier to use. So I developed this 
 app. I hope you enjoy using it and if you want to make enhancements, please do, 
 thats the best part of being open-source. 
